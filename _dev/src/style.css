@@ -1,0 +1,436 @@
+/* ============================================================
+   JESSE MORLEY — WEDDING PHOTOGRAPHER
+   Design system
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500&display=swap');
+
+/* ------------------------------------------------------------
+   Reset & base
+   ------------------------------------------------------------ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 400;
+  color: #222;
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ------------------------------------------------------------
+   Typography
+   ------------------------------------------------------------ */
+
+.serif { font-family: 'Instrument Serif', serif; }
+
+h1, h2, h3 {
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: clamp(3rem, 8vw, 6rem); }
+h2 { font-size: clamp(2rem, 5vw, 3.5rem); }
+h3 { font-size: clamp(1.25rem, 3vw, 2rem); }
+
+p {
+  line-height: 1.6;
+  color: #444;
+}
+
+.label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ------------------------------------------------------------
+   Layout
+   ------------------------------------------------------------ */
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+section {
+  padding: 6rem 0;
+}
+
+/* ------------------------------------------------------------
+   Header / Nav
+   ------------------------------------------------------------ */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 2.5rem;
+  background: #fff;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: #222;
+}
+
+.header-logo img {
+  width: 20px;
+  height: 20px;
+}
+
+.header-logo-wordmark {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: -0.02em;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Pill button nav links */
+.nav-link {
+  display: inline-block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.45rem 1rem;
+  border: 1px solid #222;
+  border-radius: 999px;
+  color: #222;
+  background: #fff;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  text-decoration: none;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background: #222;
+  color: #fff;
+  border-color: #222;
+}
+
+/* Mobile nav toggle */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+  background: none;
+  border: none;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: #222;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* Mobile nav open state */
+.nav-open .nav-toggle span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* ------------------------------------------------------------
+   Footer
+   ------------------------------------------------------------ */
+
+footer {
+  padding: 3rem 2.5rem;
+  border-top: 1px solid #e8e8e8;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.footer-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-acknowledgement {
+  max-width: 640px;
+  border-top: 1px solid #e8e8e8;
+  padding-top: 2.5rem;
+}
+
+.footer-acknowledgement p:last-child {
+  font-size: 0.8rem;
+  color: #888;
+  line-height: 1.7;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #222;
+  text-decoration: none;
+}
+
+.footer-logo img {
+  width: 16px;
+  height: 16px;
+}
+
+.footer-wordmark {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-links a {
+  font-size: 0.75rem;
+  color: #888;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.footer-links a:hover {
+  color: #222;
+}
+
+.footer-copy {
+  font-size: 0.7rem;
+  color: #aaa;
+  width: 100%;
+}
+
+/* ------------------------------------------------------------
+   Hero
+   ------------------------------------------------------------ */
+
+.hero {
+  position: relative;
+  height: 100svh;
+  min-height: 600px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: #111;
+}
+
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.85;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 3rem 2.5rem;
+  color: #fff;
+}
+
+.hero-content h1 {
+  color: #fff;
+  max-width: 18ch;
+  margin-bottom: 1.5rem;
+}
+
+.hero-content .label {
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 1rem;
+}
+
+/* ------------------------------------------------------------
+   Buttons
+   ------------------------------------------------------------ */
+
+.btn {
+  display: inline-block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.7rem 1.5rem;
+  border: 1px solid #222;
+  border-radius: 999px;
+  color: #222;
+  background: #fff;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #222;
+  color: #fff;
+}
+
+.btn-dark {
+  background: #222;
+  color: #fff;
+  border-color: #222;
+}
+
+.btn-dark:hover {
+  background: #fff;
+  color: #222;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255,255,255,0.6);
+}
+
+.btn-ghost:hover {
+  background: #fff;
+  color: #222;
+  border-color: #fff;
+}
+
+/* ------------------------------------------------------------
+   Page header (interior pages)
+   ------------------------------------------------------------ */
+
+.page-header {
+  padding: 10rem 0 4rem;
+}
+
+.page-header h1 {
+  max-width: 16ch;
+}
+
+/* ------------------------------------------------------------
+   Grid utilities
+   ------------------------------------------------------------ */
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* ------------------------------------------------------------
+   Responsive
+   ------------------------------------------------------------ */
+
+@media (max-width: 768px) {
+  header {
+    padding: 1rem 1.25rem;
+  }
+
+  nav {
+    display: none;
+    position: fixed;
+    inset: 0;
+    top: 57px;
+    background: #fff;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    z-index: 99;
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  .nav-link {
+    font-size: 0.85rem;
+    padding: 0.6rem 1.5rem;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .hero-content {
+    padding: 2rem 1.25rem;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2.5rem, 10vw, 4rem);
+  }
+
+  footer {
+    padding: 2rem 1.25rem;
+  }
+
+  .footer-main {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 4rem 0;
+  }
+
+  .page-header {
+    padding: 8rem 0 3rem;
+  }
+}
