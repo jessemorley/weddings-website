@@ -1,0 +1,20 @@
+# Old Readymag pages (root level, superseded by src/)
+about.html
+contact.html
+index.html
+my-work.html
+packages.html
+price-guide.html
+_redirects
+
+# Archive
+_archive/
+
+# Raw assets (copied into dist/ by build.sh)
+assets/
+
+# Build output — deploy from dist/ directly
+dist/
+
+# macOS
+.DS_Store
