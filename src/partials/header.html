@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jesse Morley | Wedding Photographer</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header>
+  <a class="header-logo" href="/index.html">
+    <img src="/assets/images/RasterizedImage-575d473a-f137-4ae6-ae1f-ddf4fa4f0b31.png" alt="Jesse Morley logo mark">
+    <span class="header-logo-wordmark">Jesse Morley</span>
+  </a>
+
+  <button class="nav-toggle" aria-label="Toggle navigation" onclick="this.closest('body').classList.toggle('nav-open'); document.querySelector('nav').classList.toggle('open');">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav>
+    <a class="nav-link" href="/about.html">About</a>
+    <a class="nav-link" href="/my-work.html">Work</a>
+    <a class="nav-link" href="/packages.html">Investment</a>
+    <a class="nav-link" href="/contact.html">Contact</a>
+  </nav>
+</header>
+
+<script>
+  // Mark active nav link
+  (function() {
+    var path = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-link').forEach(function(link) {
+      if (link.getAttribute('href') === '/' + path) {
+        link.classList.add('active');
+      }
+    });
+  })();
+</script>
+
