@@ -1,5 +1,6 @@
-# Source/dev files — local only
-_dev/
+# Local only — source partials and reference pages
+_src/
+_reference/
 
 # macOS
 .DS_Store
