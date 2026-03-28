@@ -3,208 +3,175 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jesse Morley | Wedding Photographer</title>
+  <title>Investment | Jesse Morley</title>
   <link rel="stylesheet" href="/style.css">
-</head>
-<body>
-
-<header>
-  <a class="header-logo" href="/index.html">
-    <img src="/assets/images/RasterizedImage-575d473a-f137-4ae6-ae1f-ddf4fa4f0b31.png" alt="Jesse Morley logo mark">
-    <span class="header-logo-wordmark">Jesse Morley</span>
-  </a>
-
-  <button class="nav-toggle" aria-label="Toggle navigation" onclick="this.closest('body').classList.toggle('nav-open'); document.querySelector('nav').classList.toggle('open');">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-
-  <nav>
-    <a class="nav-link" href="/about.html">About</a>
-    <a class="nav-link" href="/my-work.html">Work</a>
-    <a class="nav-link" href="/packages.html">Investment</a>
-    <a class="nav-link" href="/contact.html">Contact</a>
-  </nav>
-</header>
-
-<script>
-  // Mark active nav link
-  (function() {
-    var path = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('.nav-link').forEach(function(link) {
-      if (link.getAttribute('href') === '/' + path) {
-        link.classList.add('active');
-      }
-    });
-  })();
-</script>
-
-<title>Investment | Jesse Morley</title>
-
-<style>
-  /* ---- Split sections: text + image interlocked ---- */
-  .split {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    min-height: 600px;
-  }
-
-  .split.reverse { direction: rtl; }
-  .split.reverse > * { direction: ltr; }
-
-  .split-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 5rem 4rem;
-  }
-
-  .split-img {
-    overflow: hidden;
-  }
-
-  .split-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  /* ---- Package cards ---- */
-  .package-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    border: 1px solid #e8e8e8;
-  }
-
-  .package-card {
-    padding: 2.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    border-right: 1px solid #e8e8e8;
-  }
-
-  .package-card:last-child { border-right: none; }
-
-  .package-card.featured {
-    background: #222;
-    color: #fff;
-  }
-
-  .package-name {
-    font-family: 'Instrument Serif', serif;
-    font-size: 1.75rem;
-  }
-
-  .package-card.featured .package-name { color: #fff; }
-
-  .package-duration {
-    font-size: 0.7rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: #aaa;
-  }
-
-  .package-card ul {
-    list-style: none;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-  }
-
-  .package-card ul li {
-    font-size: 0.875rem;
-    color: #555;
-    padding-left: 1rem;
-    position: relative;
-    line-height: 1.5;
-  }
-
-  .package-card.featured ul li { color: rgba(255,255,255,0.6); }
-
-  .package-card ul li::before {
-    content: '—';
-    position: absolute;
-    left: 0;
-    color: #ddd;
-  }
-
-  .package-card.featured ul li::before { color: rgba(255,255,255,0.25); }
-
-  .package-price {
-    font-family: 'Instrument Serif', serif;
-    font-size: 2rem;
-    color: #aaa;
-    line-height: 1;
-  }
-
-  .package-card.featured .package-price { color: rgba(255,255,255,0.45); }
-
-  /* ---- Addon rows ---- */
-  .addon-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    padding: 1.5rem 0;
-    border-bottom: 1px solid #e8e8e8;
-    gap: 2rem;
-  }
-
-  .addon-row:first-child { border-top: 1px solid #e8e8e8; }
-
-  .addon-price {
-    font-family: 'Instrument Serif', serif;
-    font-size: 1.4rem;
-    color: #aaa;
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-
-  .addon-row h4 {
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-bottom: 0.4rem;
-  }
-
-  .addon-row p { font-size: 0.875rem; }
-
-  /* ---- Responsive ---- */
-  @media (max-width: 900px) {
+  <style>
+    /* ---- Split sections: text + image interlocked ---- */
     .split {
-      grid-template-columns: 1fr;
-      min-height: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 600px;
     }
 
-    .split.reverse { direction: ltr; }
-
-    .split-img {
-      height: 60vw;
-      min-height: 300px;
-    }
+    .split.reverse { direction: rtl; }
+    .split.reverse > * { direction: ltr; }
 
     .split-text {
-      padding: 3rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 5rem 4rem;
     }
 
+    .split-img {
+      overflow: hidden;
+    }
+
+    .split-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ---- Package cards ---- */
     .package-grid {
-      grid-template-columns: 1fr;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border: 1px solid #e8e8e8;
     }
 
     .package-card {
-      border-right: none;
-      border-bottom: 1px solid #e8e8e8;
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      border-right: 1px solid #e8e8e8;
     }
 
+    .package-card:last-child { border-right: none; }
+
     .package-card.featured {
-      border-bottom: none;
+      background: #222;
+      color: #fff;
     }
-  }
-</style>
+
+    .package-name {
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.75rem;
+    }
+
+    .package-card.featured .package-name { color: #fff; }
+
+    .package-duration {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #aaa;
+    }
+
+    .package-card ul {
+      list-style: none;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .package-card ul li {
+      font-size: 0.875rem;
+      color: #555;
+      padding-left: 1rem;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .package-card.featured ul li { color: rgba(255,255,255,0.6); }
+
+    .package-card ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: #ddd;
+    }
+
+    .package-card.featured ul li::before { color: rgba(255,255,255,0.25); }
+
+    .package-price {
+      font-family: 'Instrument Serif', serif;
+      font-size: 2rem;
+      color: #aaa;
+      line-height: 1;
+    }
+
+    .package-card.featured .package-price { color: rgba(255,255,255,0.45); }
+
+    /* ---- Addon rows ---- */
+    .addon-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid #e8e8e8;
+      gap: 2rem;
+    }
+
+    .addon-row:first-child { border-top: 1px solid #e8e8e8; }
+
+    .addon-price {
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.4rem;
+      color: #aaa;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .addon-row h4 {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .addon-row p { font-size: 0.875rem; }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 900px) {
+      .split {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .split.reverse { direction: ltr; }
+
+      .split-img {
+        height: 60vw;
+        min-height: 300px;
+      }
+
+      .split-text {
+        padding: 3rem 1.5rem;
+      }
+
+      .package-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .package-card {
+        border-right: none;
+        border-bottom: 1px solid #e8e8e8;
+      }
+
+      .package-card.featured {
+        border-bottom: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div id="site-header"></div>
 
 <main>
 
@@ -371,34 +338,24 @@
 
 </main>
 
-<footer>
-  <div class="footer-main">
-    <a class="footer-logo" href="/index.html">
-      <img src="/assets/images/RasterizedImage-575d473a-f137-4ae6-ae1f-ddf4fa4f0b31.png" alt="Jesse Morley logo mark">
-      <span class="footer-wordmark">Jesse Morley</span>
-    </a>
+<div id="site-footer"></div>
 
-    <div class="footer-links">
-      <a href="/about.html">About</a>
-      <a href="/my-work.html">Work</a>
-      <a href="/packages.html">Investment</a>
-      <a href="/contact.html">Contact</a>
-    </div>
-
-    <div class="footer-social">
-      <a href="https://www.instagram.com/jessemorleyphotography/" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://www.facebook.com/jessemorleyphotography" target="_blank" rel="noopener">Facebook</a>
-    </div>
-  </div>
-
-  <div class="footer-acknowledgement">
-    <p class="label" style="margin-bottom:0.75rem;">Always was, always will be.</p>
-    <p>I acknowledge the Traditional Owners of the land where I work and live, the Gadigal people, and pay my respects to the Elders past and present. I celebrate the stories, culture and traditions of Aboriginal and Torres Strait Islander Elders of all communities who also work and live on this land. Sovereignty has never been ceded.</p>
-  </div>
-
-  <p class="footer-copy">&copy; <span id="year"></span> Jesse Morley. All rights reserved.</p>
-</footer>
-
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>
+  function loadPartial(id, url) {
+    fetch(url)
+      .then(function(r) { return r.text(); })
+      .then(function(html) {
+        document.getElementById(id).outerHTML = html;
+        if (id === 'site-header') {
+          var path = window.location.pathname.split('/').pop() || 'index.html';
+          document.querySelectorAll('.nav-link').forEach(function(link) {
+            if (link.getAttribute('href') === '/' + path) link.classList.add('active');
+          });
+        }
+      });
+  }
+  loadPartial('site-header', '/header.html');
+  loadPartial('site-footer', '/footer.html');
+</script>
 </body>
 </html>

@@ -3,103 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jesse Morley | Wedding Photographer</title>
+  <title>Contact | Jesse Morley</title>
   <link rel="stylesheet" href="/style.css">
+  <style>
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .form-field label {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #888;
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.95rem;
+      color: #222;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #ddd;
+      padding: 0.6rem 0;
+      width: 100%;
+      outline: none;
+      transition: border-color 0.15s;
+      -webkit-appearance: none;
+    }
+
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+      border-bottom-color: #222;
+    }
+
+    .form-field textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    @media (max-width: 640px) {
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
-<header>
-  <a class="header-logo" href="/index.html">
-    <img src="/assets/images/RasterizedImage-575d473a-f137-4ae6-ae1f-ddf4fa4f0b31.png" alt="Jesse Morley logo mark">
-    <span class="header-logo-wordmark">Jesse Morley</span>
-  </a>
-
-  <button class="nav-toggle" aria-label="Toggle navigation" onclick="this.closest('body').classList.toggle('nav-open'); document.querySelector('nav').classList.toggle('open');">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-
-  <nav>
-    <a class="nav-link" href="/about.html">About</a>
-    <a class="nav-link" href="/my-work.html">Work</a>
-    <a class="nav-link" href="/packages.html">Investment</a>
-    <a class="nav-link" href="/contact.html">Contact</a>
-  </nav>
-</header>
-
-<script>
-  // Mark active nav link
-  (function() {
-    var path = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('.nav-link').forEach(function(link) {
-      if (link.getAttribute('href') === '/' + path) {
-        link.classList.add('active');
-      }
-    });
-  })();
-</script>
-
-<title>Contact | Jesse Morley</title>
-
-<style>
-  .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-  }
-
-  .form-field {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .form-field label {
-    font-size: 0.7rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: #888;
-  }
-
-  .form-field input,
-  .form-field select,
-  .form-field textarea {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 0.95rem;
-    color: #222;
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid #ddd;
-    padding: 0.6rem 0;
-    width: 100%;
-    outline: none;
-    transition: border-color 0.15s;
-    -webkit-appearance: none;
-  }
-
-  .form-field input:focus,
-  .form-field select:focus,
-  .form-field textarea:focus {
-    border-bottom-color: #222;
-  }
-
-  .form-field textarea {
-    resize: vertical;
-    min-height: 120px;
-  }
-
-  @media (max-width: 640px) {
-    .form-row { grid-template-columns: 1fr; }
-  }
-</style>
+<div id="site-header"></div>
 
 <main>
 
@@ -187,34 +154,24 @@
 
 </main>
 
-<footer>
-  <div class="footer-main">
-    <a class="footer-logo" href="/index.html">
-      <img src="/assets/images/RasterizedImage-575d473a-f137-4ae6-ae1f-ddf4fa4f0b31.png" alt="Jesse Morley logo mark">
-      <span class="footer-wordmark">Jesse Morley</span>
-    </a>
+<div id="site-footer"></div>
 
-    <div class="footer-links">
-      <a href="/about.html">About</a>
-      <a href="/my-work.html">Work</a>
-      <a href="/packages.html">Investment</a>
-      <a href="/contact.html">Contact</a>
-    </div>
-
-    <div class="footer-social">
-      <a href="https://www.instagram.com/jessemorleyphotography/" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://www.facebook.com/jessemorleyphotography" target="_blank" rel="noopener">Facebook</a>
-    </div>
-  </div>
-
-  <div class="footer-acknowledgement">
-    <p class="label" style="margin-bottom:0.75rem;">Always was, always will be.</p>
-    <p>I acknowledge the Traditional Owners of the land where I work and live, the Gadigal people, and pay my respects to the Elders past and present. I celebrate the stories, culture and traditions of Aboriginal and Torres Strait Islander Elders of all communities who also work and live on this land. Sovereignty has never been ceded.</p>
-  </div>
-
-  <p class="footer-copy">&copy; <span id="year"></span> Jesse Morley. All rights reserved.</p>
-</footer>
-
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>
+  function loadPartial(id, url) {
+    fetch(url)
+      .then(function(r) { return r.text(); })
+      .then(function(html) {
+        document.getElementById(id).outerHTML = html;
+        if (id === 'site-header') {
+          var path = window.location.pathname.split('/').pop() || 'index.html';
+          document.querySelectorAll('.nav-link').forEach(function(link) {
+            if (link.getAttribute('href') === '/' + path) link.classList.add('active');
+          });
+        }
+      });
+  }
+  loadPartial('site-header', '/header.html');
+  loadPartial('site-footer', '/footer.html');
+</script>
 </body>
 </html>
