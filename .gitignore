@@ -1,2 +1,5 @@
+# Source/dev files — local only
+_dev/
+
 # macOS
 .DS_Store
