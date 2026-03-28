@@ -242,6 +242,22 @@ footer {
   color: #222;
 }
 
+.footer-social {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-social a {
+  font-size: 0.75rem;
+  color: #888;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.footer-social a:hover {
+  color: #222;
+}
+
 .footer-copy {
   font-size: 0.7rem;
   color: #aaa;
