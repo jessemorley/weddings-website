@@ -43,33 +43,6 @@
 <title>Investment | Jesse Morley</title>
 
 <style>
-  /* ---- Split sections: text + image interlocked ---- */
-  .split {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    min-height: 600px;
-  }
-
-  .split.reverse { direction: rtl; }
-  .split.reverse > * { direction: ltr; }
-
-  .split-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 5rem 4rem;
-  }
-
-  .split-img {
-    overflow: hidden;
-  }
-
-  .split-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
   /* ---- Package cards ---- */
   .package-grid {
     display: grid;
@@ -86,11 +59,7 @@
   }
 
   .package-card:last-child { border-right: none; }
-
-  .package-card.featured {
-    background: #222;
-    color: #fff;
-  }
+  .package-card.featured { background: #222; color: #fff; }
 
   .package-name {
     font-family: 'Instrument Serif', serif;
@@ -125,13 +94,7 @@
 
   .package-card.featured ul li { color: rgba(255,255,255,0.6); }
 
-  .package-card ul li::before {
-    content: '—';
-    position: absolute;
-    left: 0;
-    color: #ddd;
-  }
-
+  .package-card ul li::before { content: '—'; position: absolute; left: 0; color: #ddd; }
   .package-card.featured ul li::before { color: rgba(255,255,255,0.25); }
 
   .package-price {
@@ -141,7 +104,7 @@
     line-height: 1;
   }
 
-  .package-card.featured .package-price { color: rgba(255,255,255,0.45); }
+  .package-card.featured .package-price { color: rgba(255,255,255,0.4); }
 
   /* ---- Addon rows ---- */
   .addon-row {
@@ -173,79 +136,57 @@
 
   .addon-row p { font-size: 0.875rem; }
 
-  /* ---- Responsive ---- */
   @media (max-width: 900px) {
-    .split {
-      grid-template-columns: 1fr;
-      min-height: auto;
-    }
-
-    .split.reverse { direction: ltr; }
-
-    .split-img {
-      height: 60vw;
-      min-height: 300px;
-    }
-
-    .split-text {
-      padding: 3rem 1.5rem;
-    }
-
-    .package-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .package-card {
-      border-right: none;
-      border-bottom: 1px solid #e8e8e8;
-    }
-
-    .package-card.featured {
-      border-bottom: none;
-    }
+    .package-grid { grid-template-columns: 1fr; }
+    .package-card { border-right: none; border-bottom: 1px solid #e8e8e8; }
+    .package-card:last-child { border-bottom: none; }
   }
 </style>
 
 <main>
 
-  <!-- Hero-style intro: big image left, headline right -->
-  <div class="split" style="margin-top:57px;">
-    <div class="split-img">
-      <img src="/assets/images/image-c7f72d80-0c39-44a6-aea5-2daa15006b21.jpg" alt="Couple embracing in garden doorway">
-    </div>
-    <div class="split-text">
-      <p class="label" style="margin-bottom:1.5rem;">Investment</p>
-      <h1 style="margin-bottom:1.5rem;">What I offer.</h1>
-      <p style="font-size:1.05rem; color:#555; max-width:38ch;">I've written this guide to cover most scenarios — but if you have something different in mind, just get in touch and we'll work something out.</p>
-    </div>
+  <!-- Page header -->
+  <div class="page-header container">
+    <p class="label" style="margin-bottom:1.5rem;">Investment</p>
+    <h1>What I offer.</h1>
+    <p style="max-width:52ch; margin-top:1.5rem; font-size:1.05rem; color:#555;">I've written this guide to cover most scenarios — but if you have something different in mind, just get in touch and we'll work something out.</p>
   </div>
 
-  <!-- What's always included: text left, portrait right -->
-  <div class="split" style="background:#f7f7f7;">
-    <div class="split-text">
-      <p class="label" style="margin-bottom:2rem;">With every wedding package</p>
-      <div style="display:flex; flex-direction:column; gap:2rem;">
+  <!-- Intro image + what's included -->
+  <section style="padding-top:0;">
+    <div class="container">
+      <div class="grid-2" style="gap:5rem; align-items:start;">
+
         <div>
-          <h3 style="font-size:0.9rem; font-family:'Space Grotesk',sans-serif; font-weight:500; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:0.5rem;">Planning support</h3>
-          <p style="font-size:0.875rem;">An initial consultation, timeline guidance, and a location scout — so your day runs smoothly and we're set up for the best possible shots.</p>
+          <img src="/assets/images/image-c7f72d80-0c39-44a6-aea5-2daa15006b21.jpg"
+               alt="Couple embracing in garden doorway"
+               style="width:100%; aspect-ratio:3/4; object-fit:cover;">
         </div>
-        <div>
-          <h3 style="font-size:0.9rem; font-family:'Space Grotesk',sans-serif; font-weight:500; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:0.5rem;">Edited gallery</h3>
-          <p style="font-size:0.875rem;">A password-protected online gallery of professionally edited, print-ready images — plus a web-resolution download for social media.</p>
+
+        <div style="padding-top:2rem;">
+          <p class="label" style="margin-bottom:2rem;">With every wedding package</p>
+          <div style="display:flex; flex-direction:column; gap:2rem;">
+            <div>
+              <h3 style="font-size:0.9rem; font-family:'Space Grotesk',sans-serif; font-weight:500; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:0.5rem;">Planning support</h3>
+              <p style="font-size:0.875rem;">An initial consultation, timeline guidance, and a location scout — so your day runs smoothly and we're set up for the best possible shots.</p>
+            </div>
+            <div>
+              <h3 style="font-size:0.9rem; font-family:'Space Grotesk',sans-serif; font-weight:500; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:0.5rem;">Edited gallery</h3>
+              <p style="font-size:0.875rem;">A password-protected online gallery of professionally edited, print-ready images — plus a web-resolution download for social media.</p>
+            </div>
+            <div>
+              <h3 style="font-size:0.9rem; font-family:'Space Grotesk',sans-serif; font-weight:500; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:0.5rem;">Preview &amp; full collection</h3>
+              <p style="font-size:0.875rem;">A selection of favourites within two weeks, with your complete gallery delivered within six weeks.</p>
+            </div>
+          </div>
         </div>
-        <div>
-          <h3 style="font-size:0.9rem; font-family:'Space Grotesk',sans-serif; font-weight:500; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:0.5rem;">Preview &amp; full collection</h3>
-          <p style="font-size:0.875rem;">A selection of favourites within two weeks, with your complete gallery delivered within six weeks.</p>
-        </div>
+
       </div>
     </div>
-    <div class="split-img">
-      <img src="/assets/images/image-8f63ad84-57d0-4166-aaa1-1b2765b1cb13.jpg" alt="Couple walking hand in hand through trees">
-    </div>
-  </div>
+  </section>
 
   <!-- Packages -->
-  <section>
+  <section style="background:#f7f7f7;">
     <div class="container">
       <p class="label" style="margin-bottom:2rem;">Packages</p>
       <div class="package-grid">
@@ -299,12 +240,12 @@
 
       </div>
 
-      <!-- Engagement row below packages -->
-      <div style="border:1px solid #e8e8e8; border-top:none; padding:2rem 2.5rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+      <!-- Engagement -->
+      <div style="border:1px solid #e8e8e8; border-top:none; padding:2rem 2.5rem; background:#fff; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
         <div>
           <p class="package-duration" style="margin-bottom:0.4rem;">Up to 2 hours</p>
           <p style="font-size:1.1rem; font-family:'Instrument Serif',serif;">Engagement session</p>
-          <p style="font-size:0.875rem; color:#555; margin-top:0.5rem; max-width:44ch;">A relaxed pre-wedding shoot — great for getting comfortable in front of the camera, and a chance to test how your look reads on film.</p>
+          <p style="font-size:0.875rem; color:#555; margin-top:0.5rem; max-width:44ch;">A relaxed pre-wedding shoot — great for getting comfortable together, and a chance to test how your look reads on camera.</p>
         </div>
         <div style="text-align:right; flex-shrink:0;">
           <p class="package-price">$1,000</p>
@@ -314,60 +255,80 @@
     </div>
   </section>
 
-  <!-- Add-ons: text left, reception photo right -->
-  <div class="split">
-    <div class="split-text" style="padding-right:5rem;">
-      <p class="label" style="margin-bottom:2.5rem;">Add-ons</p>
-      <div style="max-width:480px;">
-        <div class="addon-row">
-          <div>
-            <h4>35mm Film Coverage</h4>
-            <p>Warm, grainy, analogue charm woven through your day. Three rolls of Kodak Portra + B&amp;W.</p>
-          </div>
-          <div class="addon-price">$400</div>
-        </div>
-        <div class="addon-row">
-          <div>
-            <h4>Second Shooter</h4>
-            <p>Additional angles for those once-only moments. Recommended when prep spans two locations.</p>
-          </div>
-          <div class="addon-price">$900</div>
-        </div>
-        <div class="addon-row">
-          <div>
-            <h4>Travel</h4>
-            <p>Two hours from Sydney included. Additional hours at $100/hr. Ask about interstate travel.</p>
-          </div>
-          <div class="addon-price">$100/hr</div>
-        </div>
-        <div class="addon-row">
-          <div>
-            <h4>Fine Art Album</h4>
-            <p>Printed by Atkins Lab on Kodak paper with Italian bookbinding and etched linen cover. 8 × 10.6".</p>
-          </div>
-          <div class="addon-price">From $630</div>
-        </div>
-      </div>
-    </div>
-    <div class="split-img">
-      <img src="/assets/images/image-454496fc-a730-49cb-a5ab-c09ca5c57479.jpg" alt="Bride being lifted at reception">
-    </div>
-  </div>
+  <!-- Add-ons + images -->
+  <section>
+    <div class="container">
+      <div class="grid-2" style="gap:5rem; align-items:start;">
 
-  <!-- CTA: text right, vineyard couple left -->
-  <div class="split reverse">
-    <div class="split-text">
-      <h2 style="margin-bottom:1.5rem;">Still not sure?<br>Let's have a chat.</h2>
-      <p style="margin-bottom:2.5rem; color:#555;">I'd love to arrange a quick video call to make sure I'm the right match for you.</p>
-      <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-        <a class="btn btn-dark" href="/contact.html">Get in touch</a>
-        <a class="btn" href="/my-work.html">See my work</a>
+        <div>
+          <p class="label" style="margin-bottom:2.5rem;">Add-ons</p>
+          <div class="addon-row">
+            <div>
+              <h4>35mm Film Coverage</h4>
+              <p>Warm, grainy, analogue charm woven through your day. Three rolls of Kodak Portra + B&amp;W.</p>
+            </div>
+            <div class="addon-price">$400</div>
+          </div>
+          <div class="addon-row">
+            <div>
+              <h4>Second Shooter</h4>
+              <p>Additional angles for those once-only moments. Recommended when prep spans two locations.</p>
+            </div>
+            <div class="addon-price">$900</div>
+          </div>
+          <div class="addon-row">
+            <div>
+              <h4>Travel</h4>
+              <p>Two hours from Sydney included. Additional hours at $100/hr. Ask about interstate travel.</p>
+            </div>
+            <div class="addon-price">$100/hr</div>
+          </div>
+          <div class="addon-row">
+            <div>
+              <h4>Fine Art Album</h4>
+              <p>Printed by Atkins Lab on Kodak paper with Italian bookbinding and etched linen cover. 8 × 10.6".</p>
+            </div>
+            <div class="addon-price">From $630</div>
+          </div>
+        </div>
+
+        <!-- Stacked offset images like about page -->
+        <div style="display:flex; flex-direction:column; gap:1.5rem;">
+          <img src="/assets/images/image-454496fc-a730-49cb-a5ab-c09ca5c57479.jpg"
+               alt="Bride at reception"
+               style="width:100%; aspect-ratio:4/3; object-fit:cover;">
+          <img src="/assets/images/image-3c4d8136-dc7f-48a2-b1d8-86504635c766.jpg"
+               alt="Couple laughing"
+               style="width:65%; aspect-ratio:1/1; object-fit:cover; object-position:center top;">
+        </div>
+
       </div>
     </div>
-    <div class="split-img">
-      <img src="/assets/images/image-ba34e7b0-8069-48f9-832d-5380be567dd4.jpg" alt="Couple in vineyard">
+  </section>
+
+  <!-- CTA -->
+  <section style="background:#f7f7f7;">
+    <div class="container">
+      <div class="grid-2" style="gap:5rem; align-items:center;">
+
+        <div>
+          <img src="/assets/images/image-ba34e7b0-8069-48f9-832d-5380be567dd4.jpg"
+               alt="Couple in vineyard"
+               style="width:100%; aspect-ratio:4/3; object-fit:cover;">
+        </div>
+
+        <div>
+          <h2 style="margin-bottom:1.5rem;">Still not sure?<br>Let's have a chat.</h2>
+          <p style="margin-bottom:2.5rem; color:#555;">I'd love to arrange a quick video call to make sure I'm the right match for you.</p>
+          <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+            <a class="btn btn-dark" href="/contact.html">Get in touch</a>
+            <a class="btn" href="/my-work.html">See my work</a>
+          </div>
+        </div>
+
+      </div>
     </div>
-  </div>
+  </section>
 
 </main>
 
